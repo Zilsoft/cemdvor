@@ -2,6 +2,7 @@
 !/.srv/custom.ini
 /plugins/akismet
 /plugins/hello.php
+/plugins/gutenberg
 /themes/twentytwentyfive
 /themes/twentytwentyfour
 /themes/twentytwentythree
