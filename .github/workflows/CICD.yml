@@ -1,0 +1,14 @@
+name: Cemdvor Deploy
+
+on:
+  push:
+    branches:
+      - dev
+  release:
+    types: [published]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:

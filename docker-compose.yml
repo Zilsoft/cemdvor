@@ -12,7 +12,9 @@ services:
       - "3306:3306"
     volumes:
       - ./.srv/database:/var/lib/mysql
-  
+    networks:
+      - app_net
+      
   wordpress:
     image: wordpress:latest
     restart: always
@@ -33,7 +35,9 @@ services:
       - mysql
     links:
       - mysql
-
+    networks:
+      - app_net
+   
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     environment:
@@ -46,3 +50,12 @@ services:
       - mysql
     links:
       - mysql
+    networks:
+      - app_net
+
+networks:
+  app_net:
+    driver: bridge
+    enable_ipv6: false
+
+ 
