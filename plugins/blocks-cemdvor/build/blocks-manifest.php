@@ -6,7 +6,7 @@ return array(
 		'apiVersion' => 3,
 		'name' => 'blocks-cemdvor/block-contact',
 		'version' => '0.1.0',
-		'title' => 'Contact form',
+		'title' => 'Contact Block',
 		'category' => 'widgets',
 		'icon' => 'smiley',
 		'description' => 'Example block scaffolded with Create Block tool.',
@@ -22,12 +22,12 @@ return array(
 		'style' => 'file:./style-index.css',
 		'viewScript' => 'file:./view.js'
 	),
-	'block-shop' => array(
+	'block-market' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
-		'name' => 'blocks-cemdvor/block-shop',
+		'name' => 'blocks-cemdvor/block-market',
 		'version' => '0.1.0',
-		'title' => 'Shop Block',
+		'title' => 'Market Block',
 		'category' => 'widgets',
 		'icon' => 'smiley',
 		'description' => 'Example block scaffolded with Create Block tool.',

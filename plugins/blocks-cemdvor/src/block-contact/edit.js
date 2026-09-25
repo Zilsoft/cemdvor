@@ -31,7 +31,7 @@ export default function Edit() {
 	return (
 		<p { ...useBlockProps() }>
 			{ __(
-				'Blocks Cemdvor – hello from the CONTACT FORM!',
+				'Blocks Cemdvor – hello from the editor!',
 				'blocks-cemdvor'
 			) }
 		</p>

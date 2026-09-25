@@ -3,7 +3,7 @@
   "apiVersion": 3,
   "name": "blocks-cemdvor/block-contact",
   "version": "0.1.0",
-  "title": "Contact form",
+  "title": "Contact Block",
   "category": "widgets",
   "icon": "smiley",
   "description": "Example block scaffolded with Create Block tool.",
