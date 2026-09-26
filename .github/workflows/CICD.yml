@@ -12,3 +12,89 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout
+      uses: actions/checkout@v7.0.1
+
+    - name: Prepare WordPress Zip
+      run: |
+        WP_LINK=$(cat wp-version-control.cfg)
+        wget -O "./wordpress.zip" "$WP_LINK" || { echo "wget failed"; exit 1; }
+
+    - name: Prepare plugins and themes Zip
+      run: zip -r wpcontent.zip plugins mu-plugins themes
+
+    - name: Set target path
+      run: echo "TARGET=${{ github.event_name == 'push' && '/var/www/u0602444/data/dev.cemdvor.com' || '/var/www/u0602444/data/cemdvor.com' }}" >> $GITHUB_ENV
+
+    - name: Copy Zips to Server
+      uses: appleboy/scp-action@v1.0.0
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        port: ${{ secrets.SSH_PORT }}
+        source: "./wordpress.zip, ./wpcontent.zip"
+        target: ${{ env.TARGET }}
+
+    - name: Enable Maintenance Mode
+      uses: appleboy/scp-action@v1.0.0
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        port: ${{ secrets.SSH_PORT }}
+        source: ".maintenance"
+        target: ${{ env.TARGET }}
+
+    - name: Update WordPress Core
+      uses: appleboy/ssh-action@v1.2.5
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        port: ${{ secrets.SSH_PORT }}
+        envs: TARGET
+        script: |
+          set -e
+          cd "$TARGET"
+
+          # Удаляем только .php в корне, кроме wp-config.php
+          find . -maxdepth 1 -type f -name "*.php" ! -name "wp-config.php" -delete
+
+          # Удаляем папки ядра
+          rm -rf wp-admin wp-includes
+
+          # Распаковываем WordPress
+          unzip -o wordpress.zip -d ./
+
+          # Перемещаем содержимое из wordpress/ в корень
+          mv wordpress/* ./
+          mv wordpress/.[!.]* ./ 2>/dev/null || true
+          rmdir wordpress
+
+    - name: Update Plugins and Themes
+      uses: appleboy/ssh-action@v1.2.5
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        port: ${{ secrets.SSH_PORT }}
+        envs: TARGET
+        script: |
+          set -e
+          cd "$TARGET/wp-content"
+          rm -rf plugins mu-plugins themes
+          unzip -o "$TARGET/wpcontent.zip" -d "$TARGET/wp-content/"
+
+    - name: Disable Maintenance Mode and Remove zips
+      if: always()
+      uses: appleboy/ssh-action@v1.2.5
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        port: ${{ secrets.SSH_PORT }}
+        envs: TARGET
+        script: |
+          rm -f "$TARGET/.maintenance"
+          rm -f "$TARGET/wpcontent.zip" "$TARGET/wordpress.zip"
