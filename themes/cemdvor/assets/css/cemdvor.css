@@ -1,0 +1,269 @@
+/* ==========================================================================
+   1. Универсальный сброс — все элементы и псевдоэлементы
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	background: transparent;
+	list-style: none;
+	quotes: none;
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Убираем маркеры и псевдоэлементы у списков */
+*::before,
+*::after {
+	content: '';
+	content: none;
+}
+
+/* ==========================================================================
+   2. HTML5-элементы — блочное поведение по умолчанию
+   ========================================================================== */
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+/* ==========================================================================
+   3. Корень и body
+   ========================================================================== */
+
+html {
+	width: 100%;
+	height: 100%;
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-ms-overflow-style: scrollbar;
+	scroll-behavior: smooth;
+}
+
+body {
+	width: 100%;
+	min-height: 100%;
+	line-height: 1;
+	font-family: sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeSpeed;
+}
+
+/* ==========================================================================
+   4. Медиа — адаптивность и отсутствие инлайн-отступов
+   ========================================================================== */
+
+img, picture, video, canvas, svg, iframe, embed, object {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border: none;
+}
+
+/* Убираем alt-обводку у картинок в старых браузерах */
+img {
+	-ms-interpolation-mode: bicubic;
+}
+
+/* ==========================================================================
+   5. Формы — единый шрифт и обнуление браузерных стилей
+   ========================================================================== */
+
+input, button, textarea, select, optgroup, option {
+	font: inherit;
+	color: inherit;
+	background: none;
+	border: none;
+	outline: none;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border-radius: 0;
+}
+
+/* Убираем крестик очистки в input[type="search"] */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+/* Убираем стрелки в input[type="number"] */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	appearance: none;
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	appearance: textfield;
+	-moz-appearance: textfield;
+}
+
+/* Плейсхолдер — наследует цвет текста */
+::placeholder {
+	color: inherit;
+	opacity: 0.5;
+}
+
+/* Убираем внутренние отступы в textarea в старых браузерах */
+textarea {
+	overflow: auto;
+	resize: vertical;
+}
+
+/* ==========================================================================
+   6. Кнопки и ссылки
+   ========================================================================== */
+
+button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	overflow: visible;
+	text-transform: none;
+}
+
+button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	background-color: transparent;
+}
+
+a:hover,
+a:focus,
+a:active {
+	text-decoration: none;
+	outline: none;
+}
+
+/* ==========================================================================
+   7. Таблицы
+   ========================================================================== */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+}
+
+th, td {
+	text-align: left;
+	vertical-align: top;
+	padding: 0;
+}
+
+/* ==========================================================================
+   8. Заголовки и текстовые элементы
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal;
+	line-height: 1;
+}
+
+p, blockquote, pre, address, figure, figcaption {
+	margin: 0;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+	content: '';
+	content: none;
+}
+
+pre, code, kbd, samp {
+	font-family: monospace, monospace;
+	font-size: 100%;
+}
+
+hr {
+	display: block;
+	height: 0;
+	border: 0;
+	border-top: 1px solid currentColor;
+	overflow: visible;
+}
+
+/* ==========================================================================
+   9. Списки
+   ========================================================================== */
+
+ul, ol, menu {
+	list-style: none;
+}
+
+li {
+	list-style: none;
+}
+
+/* ==========================================================================
+   10. Прочее
+   ========================================================================== */
+
+/* Убираем выделение текста при клике (для кнопок, ссылок) */
+button, a, [role="button"] {
+	-webkit-tap-highlight-color: transparent;
+}
+
+/* Перенос длинных слов */
+p, h1, h2, h3, h4, h5, h6, li, dd, dt {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+/* Скрытые элементы */
+[hidden] {
+	display: none;
+}
+
+/* Аббревиатуры */
+abbr[title] {
+	text-decoration: none;
+}
+
+/* ==========================================================================
+   11. Плавность анимаций для пользователей с ограничениями
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 2px;
+}
