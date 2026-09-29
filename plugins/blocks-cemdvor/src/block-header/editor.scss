@@ -1,9 +1,11 @@
-/**
- * The following styles get applied inside the editor only.
- *
- * Replace them with your own styles or remove the file completely.
- */
-
 .wp-block-create-block-blocks-cemdvor {
 	border: 1px dotted #f00;
+}
+
+.header-cart-icon,
+.header-market-icon {
+	width: 20px;
+	height: 20px;
+	stroke-width: 1.5;
+	vertical-align: middle;
 }

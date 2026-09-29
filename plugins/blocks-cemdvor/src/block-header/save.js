@@ -11,13 +11,13 @@ export default function save( { attributes } ) {
 					<div className="header-search"></div>
 					<div className="header-mode-switcher"></div>
 					{ cartLink && (
-						<div className="header-cert-link">
+						<div className="header-cart-link">
 							<a href={ cartLink } aria-label="Корзина"></a>
 						</div>
 					) }
 					{ marketLink && (
 						<div className="header-market-link">
-							<a href={ marketLink }>Магазин</a>
+							<a href={ marketLink } aria-label="Магазин"></a>
 						</div>
 					) }
 				</div>

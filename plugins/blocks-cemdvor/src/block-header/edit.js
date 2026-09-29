@@ -1,6 +1,7 @@
 
 import { useBlockProps, InnerBlocks, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
+import { IconShoppingCart, IconBuildingStore } from '@tabler/icons-react';
 import './editor.scss';
 
 export default function Edit( { attributes, setAttributes } ) {
@@ -29,13 +30,17 @@ export default function Edit( { attributes, setAttributes } ) {
 						<div className="header-search"></div>
 						<div className="header-mode-switcher"></div>
 						{ cartLink && (
-							<div className="header-cert-link">
-								<a href={ cartLink } aria-label="Корзина"></a>
+							<div className="header-cart-link">
+								<a href={ cartLink } aria-label="Корзина">
+									<IconShoppingCart className="header-cart-icon" />
+								</a>
 							</div>
 						) }
 						{ marketLink && (
 							<div className="header-market-link">
-								<a href={ marketLink }>Магазин</a>
+								<a href={ marketLink } aria-label="Магазин">
+									<IconBuildingStore className="header-market-icon" />
+								</a>
 							</div>
 						) }
 					</div>

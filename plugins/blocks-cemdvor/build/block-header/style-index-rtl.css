@@ -1,14 +1,1 @@
-/*!****************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/block-header/style.scss ***!
-  \****************************************************************************************************************************************************************************************************************************************************/
-/**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
- */
-.wp-block-create-block-blocks-cemdvor {
-  background-color: #21759b;
-  color: #fff;
-  padding: 2px;
-}
+.wp-block-create-block-blocks-cemdvor{background-color:#21759b;color:#fff;padding:2px}.header-cart-link a{background-color:#333;display:inline-block;height:20px;mask-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 fill=%27none%27 stroke=%27%23000%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27%3E%3Cpath stroke=%27none%27 d=%27M0 0h24v24H0z%27/%3E%3Cpath d=%27M4 19a2 2 0 1 0 4 0 2 2 0 1 0-4 0M15 19a2 2 0 1 0 4 0 2 2 0 1 0-4 0%27/%3E%3Cpath d=%27M17 17H6V3H4%27/%3E%3Cpath d=%27m6 5 14 1-1 7H6%27/%3E%3C/svg%3E");mask-position:center;mask-repeat:no-repeat;mask-size:contain;transition:background-color .2s ease;width:20px}.header-cart-link a:hover{background-color:#0073aa}.header-market-link a{background-color:#333;display:inline-block;height:20px;mask-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 fill=%27none%27 stroke=%27%23000%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27%3E%3Cpath stroke=%27none%27 d=%27M0 0h24v24H0z%27/%3E%3Cpath d=%27M3 21h18M3 7v1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7H3l2-4h14l2 4M5 21V10.85M19 21V10.85M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4%27/%3E%3C/svg%3E");mask-position:center;mask-repeat:no-repeat;mask-size:contain;transition:background-color .2s ease;width:20px}.header-market-link a:hover{background-color:#0073aa}
