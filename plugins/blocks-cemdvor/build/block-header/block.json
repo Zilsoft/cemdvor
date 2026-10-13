@@ -5,17 +5,19 @@
   "version": "0.1.0",
   "title": "Header",
   "category": "cemdvor",
-  "icon": "layuot",
+  "icon": "layout",
   "description": "Site Header Block",
   "supports": {
     "html": false
   },
   "attributes": {
     "marketLink": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "cartLink": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     }
   },
   "textdomain": "blocks-cemdvor",

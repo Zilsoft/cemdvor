@@ -29,17 +29,19 @@ return array(
 		'version' => '0.1.0',
 		'title' => 'Header',
 		'category' => 'cemdvor',
-		'icon' => 'layuot',
+		'icon' => 'layout',
 		'description' => 'Site Header Block',
 		'supports' => array(
 			'html' => false
 		),
 		'attributes' => array(
 			'marketLink' => array(
-				'type' => 'string'
+				'type' => 'string',
+				'default' => ''
 			),
 			'cartLink' => array(
-				'type' => 'string'
+				'type' => 'string',
+				'default' => ''
 			)
 		),
 		'textdomain' => 'blocks-cemdvor',
