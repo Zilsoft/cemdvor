@@ -1,7 +1,6 @@
 /.srv/*
 !/.srv/custom.ini
-/plugins/akismet
-/plugins/hello.php
+/plugins/create-block-theme
 /themes/twentytwentyfive
 /themes/twentytwentyfour
 /themes/twentytwentythree

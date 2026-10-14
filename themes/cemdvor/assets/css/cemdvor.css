@@ -267,3 +267,8 @@ abbr[title] {
 	outline: 2px solid currentColor;
 	outline-offset: 2px;
 }
+
+body {
+	font-family: var(--wp--preset--font-family--lato);
+	font-style: normal;
+}

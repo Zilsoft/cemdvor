@@ -1,15 +1,18 @@
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
 export default function save( { attributes } ) {
-	const { marketLink, cartLink } = attributes;
+	const { marketLink, cartLink, searchLink } = attributes;
 	
 	return (
 		<div { ...useBlockProps.save() }>
 			<div className="inner-header">
 				<InnerBlocks.Content />
 				<div className="right-section">
-					<div className="header-search"></div>
-					<div className="header-mode-switcher"></div>
+					{ searchLink && (
+						<div className="header-search-link">
+							<a href={ searchLink } aria-label="Поиск"></a>
+						</div>
+					) }
 					{ cartLink && (
 						<div className="header-cart-link">
 							<a href={ cartLink } aria-label="Корзина"></a>

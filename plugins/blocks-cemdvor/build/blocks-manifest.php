@@ -27,10 +27,10 @@ return array(
 		'apiVersion' => 3,
 		'name' => 'blocks-cemdvor/block-header',
 		'version' => '0.1.0',
-		'title' => 'Header',
+		'title' => 'Шапка',
 		'category' => 'cemdvor',
 		'icon' => 'layout',
-		'description' => 'Site Header Block',
+		'description' => 'Список блоков',
 		'supports' => array(
 			'html' => false
 		),
@@ -40,6 +40,10 @@ return array(
 				'default' => ''
 			),
 			'cartLink' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'searchLink' => array(
 				'type' => 'string',
 				'default' => ''
 			)

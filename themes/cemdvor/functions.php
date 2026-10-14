@@ -32,12 +32,12 @@ function cemdvor_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'cemdvor_enable_google_font', array(
-		'default'           => CEMDVOR_GOOGLE_FONT_DEFAULT, 
-		'sanitize_callback' => 'wp_validate_boolean', 
+		'default'           => CEMDVOR_GOOGLE_FONT_DEFAULT,
+		'sanitize_callback' => 'wp_validate_boolean',
 	) );
 
 	$wp_customize->add_control( 'cemdvor_enable_google_font', array(
-		'label'   => __( 'Включить Google Font (Urbanist)', 'cemdvor' ),
+		'label'   => __( 'Включить Google Fonts (Urbanist, Lato, Roboto)', 'cemdvor' ),
 		'section' => 'cemdvor_typography',
 		'type'    => 'checkbox',
 	) );
@@ -48,11 +48,8 @@ function cemdvor_google_font() {
 	$font_url = '';
 
 	if ( get_theme_mod( 'cemdvor_enable_google_font', CEMDVOR_GOOGLE_FONT_DEFAULT ) ) {
-		$font       = 'Urbanist';
-		$font_extra = 'ital,wght@0,400;0,700;1,400;1,700';
-
 		$query_args = array(
-			'family'  => $font . ':' . $font_extra,
+			'family'  => 'Urbanist:ital,wght@0,400;0,700;1,400;1,700|Lato:wght@400;700|Roboto:wght@400;500;700',
 			'subset'  => 'latin,latin-ext',
 			'display' => 'swap',
 		);
@@ -81,3 +78,5 @@ function cemdvor_google_font_script() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'cemdvor_google_font_script' );
+add_action( 'enqueue_block_editor_assets', 'cemdvor_google_font_script' );
+add_action( 'enqueue_block_assets', 'cemdvor_google_font_script' );

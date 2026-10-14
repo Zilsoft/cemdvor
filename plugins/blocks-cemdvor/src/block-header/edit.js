@@ -4,19 +4,24 @@ import { PanelBody, TextControl } from '@wordpress/components';
 import './editor.scss';
 
 export default function Edit( { attributes, setAttributes } ) {
-	const { marketLink, cartLink } = attributes;
+	const { marketLink, cartLink, searchLink } = attributes;
 	
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title="Header Links">
+				<PanelBody title="Ссылки:">
 					<TextControl
-						label="Market Link"
+						label="Ссылка на поиск"
+						value={ searchLink }
+						onChange={ ( value ) => setAttributes( { searchLink: value } ) }
+					/>
+					<TextControl
+						label="Ссылка на магазин"
 						value={ marketLink }
 						onChange={ ( value ) => setAttributes( { marketLink: value } ) }
 					/>
 					<TextControl
-						label="Cart Link"
+						label="Ссылка на корзину"
 						value={ cartLink }
 						onChange={ ( value ) => setAttributes( { cartLink: value } ) }
 					/>
@@ -26,8 +31,11 @@ export default function Edit( { attributes, setAttributes } ) {
 				<div className="inner-header">
 					<InnerBlocks />
 					<div className="right-section">
-						<div className="header-search"></div>
-						<div className="header-mode-switcher"></div>
+						{ searchLink && (
+							<div className="header-search-link">
+								<a href={ searchLink } aria-label="Поиск"></a>
+							</div>
+						) }
 						{ cartLink && (
 							<div className="header-cart-link">
 								<a href={ cartLink } aria-label="Корзина"></a>
