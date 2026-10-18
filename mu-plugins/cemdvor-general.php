@@ -25,3 +25,25 @@ function cemdvor_remove_dashboard_widgets(){
   unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_site_health']);
 }
 add_action('wp_dashboard_setup', 'cemdvor_remove_dashboard_widgets');
+
+function cemdvor_allow_svg_upload( $mimes ) {
+	if ( current_user_can( 'manage_options' ) ) {
+		$mimes['svg']  = 'image/svg+xml';
+		$mimes['svgz'] = 'image/svg+xml';
+	}
+
+	return $mimes;
+}
+add_filter( 'upload_mimes', 'cemdvor_allow_svg_upload' );
+
+function cemdvor_fix_svg_mime( $data, $file, $filename, $mimes ) {
+	$filetype = wp_check_filetype( $filename, $mimes );
+
+	if ( 'svg' === $filetype['ext'] || 'svgz' === $filetype['ext'] ) {
+		$data['ext']  = $filetype['ext'];
+		$data['type'] = 'image/svg+xml';
+	}
+
+	return $data;
+}
+add_filter( 'wp_check_filetype_and_ext', 'cemdvor_fix_svg_mime', 10, 4 );
