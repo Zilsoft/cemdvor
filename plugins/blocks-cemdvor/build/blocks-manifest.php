@@ -46,6 +46,10 @@ return array(
 			'searchLink' => array(
 				'type' => 'string',
 				'default' => ''
+			),
+			'emailLink' => array(
+				'type' => 'string',
+				'default' => ''
 			)
 		),
 		'textdomain' => 'blocks-cemdvor',

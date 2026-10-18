@@ -1,6 +1,3 @@
-/* ==========================================================================
-   1. Универсальный сброс — все элементы и псевдоэлементы
-   ========================================================================== */
 
 *,
 *::before,
@@ -13,32 +10,23 @@
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-	background: transparent;
+	background: none; 
 	list-style: none;
 	quotes: none;
 	text-decoration: none;
 	color: inherit;
 }
 
-/* Убираем маркеры и псевдоэлементы у списков */
 *::before,
 *::after {
 	content: '';
 	content: none;
 }
 
-/* ==========================================================================
-   2. HTML5-элементы — блочное поведение по умолчанию
-   ========================================================================== */
-
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-
-/* ==========================================================================
-   3. Корень и body
-   ========================================================================== */
 
 html {
 	width: 100%;
@@ -60,10 +48,6 @@ body {
 	text-rendering: optimizeSpeed;
 }
 
-/* ==========================================================================
-   4. Медиа — адаптивность и отсутствие инлайн-отступов
-   ========================================================================== */
-
 img, picture, video, canvas, svg, iframe, embed, object {
 	display: block;
 	max-width: 100%;
@@ -71,14 +55,9 @@ img, picture, video, canvas, svg, iframe, embed, object {
 	border: none;
 }
 
-/* Убираем alt-обводку у картинок в старых браузерах */
 img {
 	-ms-interpolation-mode: bicubic;
 }
-
-/* ==========================================================================
-   5. Формы — единый шрифт и обнуление браузерных стилей
-   ========================================================================== */
 
 input, button, textarea, select, optgroup, option {
 	font: inherit;
@@ -92,7 +71,6 @@ input, button, textarea, select, optgroup, option {
 	border-radius: 0;
 }
 
-/* Убираем крестик очистки в input[type="search"] */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
@@ -101,7 +79,6 @@ input[type="search"]::-webkit-search-results-decoration {
 	-webkit-appearance: none;
 }
 
-/* Убираем стрелки в input[type="number"] */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
 	appearance: none;
@@ -114,21 +91,15 @@ input[type="number"] {
 	-moz-appearance: textfield;
 }
 
-/* Плейсхолдер — наследует цвет текста */
 ::placeholder {
 	color: inherit;
 	opacity: 0.5;
 }
 
-/* Убираем внутренние отступы в textarea в старых браузерах */
 textarea {
 	overflow: auto;
 	resize: vertical;
 }
-
-/* ==========================================================================
-   6. Кнопки и ссылки
-   ========================================================================== */
 
 button {
 	background: none;
@@ -156,10 +127,6 @@ a:active {
 	outline: none;
 }
 
-/* ==========================================================================
-   7. Таблицы
-   ========================================================================== */
-
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -171,10 +138,6 @@ th, td {
 	vertical-align: top;
 	padding: 0;
 }
-
-/* ==========================================================================
-   8. Заголовки и текстовые элементы
-   ========================================================================== */
 
 h1, h2, h3, h4, h5, h6 {
 	font-size: 100%;
@@ -211,10 +174,6 @@ hr {
 	overflow: visible;
 }
 
-/* ==========================================================================
-   9. Списки
-   ========================================================================== */
-
 ul, ol, menu {
 	list-style: none;
 }
@@ -223,34 +182,22 @@ li {
 	list-style: none;
 }
 
-/* ==========================================================================
-   10. Прочее
-   ========================================================================== */
-
-/* Убираем выделение текста при клике (для кнопок, ссылок) */
 button, a, [role="button"] {
 	-webkit-tap-highlight-color: transparent;
 }
 
-/* Перенос длинных слов */
 p, h1, h2, h3, h4, h5, h6, li, dd, dt {
 	overflow-wrap: break-word;
 	word-wrap: break-word;
 }
 
-/* Скрытые элементы */
 [hidden] {
 	display: none;
 }
 
-/* Аббревиатуры */
 abbr[title] {
 	text-decoration: none;
 }
-
-/* ==========================================================================
-   11. Плавность анимаций для пользователей с ограничениями
-   ========================================================================== */
 
 @media (prefers-reduced-motion: reduce) {
 	*,
@@ -267,6 +214,8 @@ abbr[title] {
 	outline: 2px solid currentColor;
 	outline-offset: 2px;
 }
+
+/* Cemdvor css*/
 
 body {
 	font-family: var(--wp--preset--font-family--lato);

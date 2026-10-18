@@ -22,6 +22,10 @@
     "searchLink": {
       "type": "string",
       "default": ""
+    },
+    "emailLink": {
+      "type": "string",
+      "default": ""
     }
   },
   "textdomain": "blocks-cemdvor",

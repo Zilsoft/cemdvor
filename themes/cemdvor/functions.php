@@ -25,6 +25,16 @@ function cemdvor_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'cemdvor_styles' );
 
+function cemdvor_dark_mode_styles() {
+	wp_enqueue_style(
+		'cemdvor-dark-mode',
+		get_template_directory_uri() . '/assets/css/dark-mode.css',
+		array(),
+		wp_get_theme()->get( 'Version' )
+	);
+}
+add_action( 'enqueue_block_assets', 'cemdvor_dark_mode_styles' );
+
 function cemdvor_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'cemdvor_typography', array(
 		'title'    => __( 'Типографика', 'cemdvor' ),
@@ -44,27 +54,16 @@ function cemdvor_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'cemdvor_customize_register' );
 
-function cemdvor_google_font() {
+function cemdvor_google_font_script() {
 	$font_url = '';
 
 	if ( get_theme_mod( 'cemdvor_enable_google_font', CEMDVOR_GOOGLE_FONT_DEFAULT ) ) {
-		$query_args = array(
-			'family'  => 'Urbanist:ital,wght@0,400;0,700;1,400;1,700|Lato:wght@400;700|Roboto:wght@400;500;700',
-			'subset'  => 'latin,latin-ext',
-			'display' => 'swap',
-		);
-
-		$font_url = add_query_arg(
-			$query_args,
-			'//fonts.googleapis.com/css2'
-		);
+		$font_url = 'https://fonts.googleapis.com/css2?'
+			. 'family=Urbanist:ital,wght@0,400;0,700;1,400;1,700'
+			. '&family=Lato:wght@400;700'
+			. '&family=Roboto:wght@400;500;700'
+			. '&display=swap';
 	}
-
-	return $font_url;
-}
-
-function cemdvor_google_font_script() {
-	$font_url = cemdvor_google_font();
 
 	if ( empty( $font_url ) ) {
 		return;

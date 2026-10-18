@@ -82,6 +82,10 @@
 				"height": "20px",
 				"hover": "#d6f329",
 				"width": "20px"
+			},
+			"tooltip": {
+				"background": "#ff7070",
+				"color": "#d6f329"
 			}
 		},
 		"layout": {
@@ -205,7 +209,7 @@
 				}
 			},
 			"core/navigation": {
-				"css": "& .wp-block-site-title{ margin:0; font-weight:400;}",
+				"css": "& .wp-block-site-title{ margin:0; font-weight:400;} & .wp-block-navigation-item__label{ white-space: nowrap;}",
 				"elements": {
 					"link": {
 						":active": {
