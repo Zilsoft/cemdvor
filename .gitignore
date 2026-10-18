@@ -7,3 +7,4 @@
 /themes/twentytwentyfour
 /themes/twentytwentythree
 .github/workflows/CICD_old.yml
+node_modules
