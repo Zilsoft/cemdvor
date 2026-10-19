@@ -59,21 +59,120 @@
 						-webkit-mask-position: center;
 					}
 				}
-			}
-			
 
-			@media (max-width: 600px) { // Или 600px, как у тебя переключается меню
+				@media (max-width: 630px) {
+					.wp-block-navigation__responsive-container-open {
+						display: block !important;
+					}
+					
+					/* Скрываем десктопное меню, но ТОЛЬКО когда модальное окно закрыто */
+					.wp-block-navigation__responsive-container:not(.is-menu-open.has-modal-open) {
+						display: none !important;
+					}
+				}
+			}
+
+			@media (max-width: 600px) { 
 				.wp-block-site-logo img {
-					width: 52px; // Фиксируем размер
+					width: 52px;
 					height: 52px;
 				}
 			}
 		}
 
+		.working-hours-mobile {
+			.working-hours-toggle {
+				display: none;
+				background: none;
+				border: none;
+				padding: 0;
+				cursor: pointer;
+				color: var(--wp--custom--icon--color);
+				width: 24px;
+				height: 24px;
+
+				&:hover {
+					color: var(--wp--custom--icon--hover);
+				}
+			}
+
+			.working-hours-modal {
+				display: none;
+				position: fixed;
+				inset: 0;
+				background: rgba(0, 0, 0, 0.7);
+				z-index: 9999;
+				align-items: center;
+				justify-content: center;
+
+				&.is-open {
+					display: flex;
+				}
+
+				&__content {
+					background: var(--wp--custom--header--background);
+					color: var(--wp--custom--icon--color);
+					padding: 24px;
+					border-radius: 8px;
+					max-width: 320px;
+					width: 90%;
+					position: relative;
+					text-align: center;
+
+					h3 {
+						margin: 0 0 16px;
+						font-size: 18px;
+					}
+
+					p {
+						margin: 8px 0;
+						font-size: 16px;
+					}
+				}
+
+				&__close {
+					position: absolute;
+					top: 8px;
+					right: 8px;
+					background: none;
+					border: none;
+					color: inherit;
+					font-size: 24px;
+					cursor: pointer;
+					line-height: 1;
+				}
+			}
+
+		}
+		.working-hours {
+			margin-left: auto;
+			margin-right: auto;
+			display: inline-flex;
+			flex-direction: column; 
+			align-items: flex-start;
+			justify-content: center;
+			text-decoration: none;
+			font-weight: 700;
+			font-size: 16px;
+			letter-spacing: 0.5px;
+			color: var(--wp--custom--icon--color);
+		}
+
+		@media (max-width: 1375px) {
+				.working-hours {
+					display: none;
+				}
+
+				.working-hours-mobile .working-hours-toggle {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+		}
+
 		.right-section {
 			display: flex;
 			flex-direction: column; 
-			margin-left: auto;  
 			gap: 10px;
 
 			.theme-toggle-wrap {
