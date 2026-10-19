@@ -26,6 +26,18 @@
     "emailLink": {
       "type": "string",
       "default": ""
+    },
+    "phoneLink1": {
+      "type": "string",
+      "default": ""
+    },
+    "phoneLink2": {
+      "type": "string",
+      "default": ""
+    },
+    "phoneLink3": {
+      "type": "string",
+      "default": ""
     }
   },
   "textdomain": "blocks-cemdvor",

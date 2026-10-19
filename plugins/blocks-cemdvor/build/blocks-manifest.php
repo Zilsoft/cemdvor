@@ -50,6 +50,18 @@ return array(
 			'emailLink' => array(
 				'type' => 'string',
 				'default' => ''
+			),
+			'phoneLink1' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'phoneLink2' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'phoneLink3' => array(
+				'type' => 'string',
+				'default' => ''
 			)
 		),
 		'textdomain' => 'blocks-cemdvor',

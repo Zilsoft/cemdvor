@@ -11,22 +11,13 @@
 		"html": false
 	},
 	"attributes": {
-		"marketLink": {
-			"type": "string",
-			"default": "" 
-		},
-		"cartLink": {
-			"type": "string",
-			"default": "" 
-		},
-		"searchLink": {
-			"type": "string",
-			"default": "" 
-		},
-		"emailLink": {
-			"type": "string",
-			"default": "" 
-		}
+		"marketLink": { "type": "string", "default": "" },
+		"cartLink": { "type": "string", "default": "" },
+		"searchLink": { "type": "string", "default": "" },
+		"emailLink": { "type": "string", "default": "" },
+		"phoneLink1": { "type": "string", "default": "" },
+		"phoneLink2": { "type": "string", "default": "" },
+		"phoneLink3": { "type": "string", "default": "" }
 	},
 	"textdomain": "blocks-cemdvor",
 	"editorScript": "file:./index.js",
