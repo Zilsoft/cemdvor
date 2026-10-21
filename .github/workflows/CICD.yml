@@ -71,7 +71,7 @@ jobs:
           rsync -a wordpress/ ./
 
           # Удаляем временный каталог wordpress
-          rmdir wordpress
+          rm -rf wordpress
 
     - name: Update Plugins and Themes
       uses: appleboy/ssh-action@v1.0.3
