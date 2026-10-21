@@ -1,9 +1,8 @@
 /.srv/*
 !/.srv/custom.ini
-/plugins/akismet
-/plugins/hello.php
-/plugins/gutenberg
+/plugins/create-block-theme
 /themes/twentytwentyfive
 /themes/twentytwentyfour
 /themes/twentytwentythree
 .github/workflows/CICD_old.yml
+node_modules

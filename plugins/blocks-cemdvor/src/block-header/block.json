@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "blocks-cemdvor/block-header",
+	"version": "0.1.0",
+	"title": "Шапка",
+	"category": "cemdvor",
+	"icon": "layout",
+	"description": "Список блоков",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"marketLink": { "type": "string", "default": "" },
+		"cartLink": { "type": "string", "default": "" },
+		"searchLink": { "type": "string", "default": "" },
+		"emailLink": { "type": "string", "default": "" },
+		"phoneLink1": { "type": "string", "default": "" },
+		"phoneLink2": { "type": "string", "default": "" },
+		"phoneLink3": { "type": "string", "default": "" }
+	},
+	"textdomain": "blocks-cemdvor",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}
