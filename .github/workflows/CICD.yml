@@ -67,9 +67,10 @@ jobs:
           # Распаковываем WordPress
           unzip -o wordpress.zip -d ./
 
-          # Перемещаем содержимое из wordpress/ в корень
-          mv wordpress/* ./
-          mv wordpress/.[!.]* ./ 2>/dev/null || true
+          # Синхронизируем содержимое из wordpress/ в корень
+          rsync -a wordpress/ ./
+
+          # Удаляем временный каталог wordpress
           rmdir wordpress
 
     - name: Update Plugins and Themes
