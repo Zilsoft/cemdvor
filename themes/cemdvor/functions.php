@@ -23,7 +23,7 @@ function cemdvor_styles() {
 		true
 	);
 }
-add_action( 'wp_enqueue_scripts', 'cemdvor_styles' );
+add_action( 'enqueue_block_assets', 'cemdvor_styles' );
 
 function cemdvor_dark_mode_styles() {
 	wp_enqueue_style(
@@ -76,6 +76,4 @@ function cemdvor_google_font_script() {
 		wp_get_theme()->get( 'Version' )
 	);
 }
-add_action( 'wp_enqueue_scripts', 'cemdvor_google_font_script' );
-add_action( 'enqueue_block_editor_assets', 'cemdvor_google_font_script' );
 add_action( 'enqueue_block_assets', 'cemdvor_google_font_script' );

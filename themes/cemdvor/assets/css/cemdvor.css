@@ -159,9 +159,3 @@ p, li, dd, dt {
 	outline: 2px solid currentColor;
 	outline-offset: 2px;
 }
-
-/* Cemdvor css*/
-
-body {
-	font-family: var(--wp--preset--font-family--lato, sans-serif);
-}

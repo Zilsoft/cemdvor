@@ -1,6 +1,7 @@
 /.srv/*
 !/.srv/custom.ini
 /plugins/create-block-theme
+/plugins/media-export-clean
 /themes/twentytwentyfive
 /themes/twentytwentyfour
 /themes/twentytwentythree
