@@ -5,9 +5,8 @@ import './editor.scss';
 
 export default function Edit() {
 	return (
-		<p { ...useBlockProps() }>
-			Quick Links Block!
-		</p>
+		<div { ...useBlockProps() }>
+			<p >Quick Links Block!</p>
+		</div>
 	);
 }
-

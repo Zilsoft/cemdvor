@@ -1,3 +1,4 @@
+/* Reset CSS */
 
 *,
 *::before,
@@ -7,11 +8,8 @@
 	padding: 0;
 	border: 0;
 	outline: 0;
-	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-	background: none; 
-	list-style: none;
 	quotes: none;
 	text-decoration: none;
 	color: inherit;
@@ -19,7 +17,6 @@
 
 *::before,
 *::after {
-	content: '';
 	content: none;
 }
 
@@ -42,7 +39,6 @@ body {
 	width: 100%;
 	min-height: 100%;
 	line-height: 1;
-	font-family: sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeSpeed;
@@ -60,11 +56,7 @@ img {
 }
 
 input, button, textarea, select, optgroup, option {
-	font: inherit;
-	color: inherit;
-	background: none;
-	border: none;
-	outline: none;
+	background: transparent;
 	appearance: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -102,8 +94,6 @@ textarea {
 }
 
 button {
-	background: none;
-	border: none;
 	cursor: pointer;
 	overflow: visible;
 	text-transform: none;
@@ -112,19 +102,6 @@ button {
 button::-moz-focus-inner {
 	border: 0;
 	padding: 0;
-}
-
-a {
-	text-decoration: none;
-	color: inherit;
-	background-color: transparent;
-}
-
-a:hover,
-a:focus,
-a:active {
-	text-decoration: none;
-	outline: none;
 }
 
 table {
@@ -136,67 +113,35 @@ table {
 th, td {
 	text-align: left;
 	vertical-align: top;
-	padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-size: 100%;
 	font-weight: normal;
 	line-height: 1;
-}
-
-p, blockquote, pre, address, figure, figcaption {
-	margin: 0;
-}
-
-blockquote, q {
-	quotes: none;
-}
-
-blockquote::before,
-blockquote::after,
-q::before,
-q::after {
-	content: '';
-	content: none;
+	overflow-wrap: break-word;
 }
 
 pre, code, kbd, samp {
 	font-family: monospace, monospace;
-	font-size: 100%;
 }
 
 hr {
 	display: block;
 	height: 0;
-	border: 0;
 	border-top: 1px solid currentColor;
 	overflow: visible;
-}
-
-ul, ol, menu {
-	list-style: none;
-}
-
-li {
-	list-style: none;
 }
 
 button, a, [role="button"] {
 	-webkit-tap-highlight-color: transparent;
 }
 
-p, h1, h2, h3, h4, h5, h6, li, dd, dt {
+p, li, dd, dt {
 	overflow-wrap: break-word;
-	word-wrap: break-word;
 }
 
 [hidden] {
 	display: none;
-}
-
-abbr[title] {
-	text-decoration: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -218,6 +163,5 @@ abbr[title] {
 /* Cemdvor css*/
 
 body {
-	font-family: var(--wp--preset--font-family--lato);
-	font-style: normal;
+	font-family: var(--wp--preset--font-family--lato, sans-serif);
 }

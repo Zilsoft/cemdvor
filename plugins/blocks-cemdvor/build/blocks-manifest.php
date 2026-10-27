@@ -26,7 +26,7 @@ return array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
 		'name' => 'blocks-cemdvor/block-header',
-		'version' => '0.1.0',
+		'version' => '0.1.3',
 		'title' => 'Шапка',
 		'category' => 'cemdvor',
 		'icon' => 'layout',
@@ -79,6 +79,27 @@ return array(
 		'category' => 'widgets',
 		'icon' => 'smiley',
 		'description' => 'Example block scaffolded with Create Block tool.',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'blocks-cemdvor',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js'
+	),
+	'block-quick-links' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'blocks-cemdvor/block-quick-links',
+		'version' => '0.1.0',
+		'title' => 'Quick Links Block',
+		'category' => 'widgets',
+		'icon' => 'smiley',
+		'description' => 'Quick Links Block',
 		'example' => array(
 			
 		),

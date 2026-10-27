@@ -86,6 +86,9 @@
 			"tooltip": {
 				"background": "#ff7070",
 				"color": "#d6f329"
+			},
+			"block": {
+				"color": "#000000"
 			}
 		},
 		"layout": {
