@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "cemdvor/block-nav-icons",
+  "version": "0.1.0",
+  "title": "Navigation Icons Block",
+  "category": "widgets",
+  "icon": "links",
+  "description": "Navigation Icons Block.",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "blocks-cemdvor",
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "marketLink": {
+      "type": "string",
+      "default": ""
+    },
+    "searchLink": {
+      "type": "string",
+      "default": ""
+    },
+    "emailLink": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}

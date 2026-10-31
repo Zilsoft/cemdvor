@@ -1,0 +1,23 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "cemdvor/block-working-phone",
+	"version": "0.1.0",
+	"title": "Working Phone Block",
+	"category": "widgets",
+	"icon": "phone",
+	"description": "Widget for displaying work phone numbers.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "blocks-cemdvor",
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js",
+	"attributes": {
+		"phoneLink1": { "type": "string", "default": "" },
+		"phoneLink2": { "type": "string", "default": "" },
+		"phoneLink3": { "type": "string", "default": "" }
+	}
+}

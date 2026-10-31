@@ -1,19 +1,18 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "blocks-cemdvor/block-market",
+	"name": "cemdvor/block-working-hours",
 	"version": "0.1.0",
-	"title": "Market Block",
+	"title": "Working Hours Block",
 	"category": "widgets",
-	"icon": "smiley",
-	"description": "Example block scaffolded with Create Block tool.",
+	"icon": "clock",
+	"description": "Working hours display widget",
 	"example": {},
 	"supports": {
 		"html": false
 	},
 	"textdomain": "blocks-cemdvor",
 	"editorScript": "file:./index.js",
-	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
 	"viewScript": "file:./view.js"
 }

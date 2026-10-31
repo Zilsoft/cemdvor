@@ -25,16 +25,6 @@ function cemdvor_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'cemdvor_styles' );
 
-function cemdvor_dark_mode_styles() {
-	wp_enqueue_style(
-		'cemdvor-dark-mode',
-		get_template_directory_uri() . '/assets/css/dark-mode.css',
-		array(),
-		wp_get_theme()->get( 'Version' )
-	);
-}
-add_action( 'enqueue_block_assets', 'cemdvor_dark_mode_styles' );
-
 function cemdvor_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'cemdvor_typography', array(
 		'title'    => __( 'Типографика', 'cemdvor' ),
